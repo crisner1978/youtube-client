@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom"
 
 const MobileNavbar = () => {
   return (
-    <nav className="border-t border-gray-3 z-50 fixed bottom-0 left-0 w-full py-[0.8rem] px-4 sm:hidden">
+    <nav className="border-t border-gray-3 bg-grey z-30 fixed bottom-0 left-0 w-full py-[0.8rem] px-4 sm:hidden">
       <div className="flex items-center justify-between">
         <MobileLinkIcon pathname="/" Icon={HomeIcon}/>
         <MobileLinkIcon pathname="feed/trending" Icon={FireIcon} />

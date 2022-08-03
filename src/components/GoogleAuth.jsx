@@ -1,17 +1,22 @@
-import React from 'react'
-import { SignInIcon } from './Icons'
+import React, { useEffect } from "react";
+import { authenticate } from "utils/api-client";
 
-const GoogleAuth = () => {
-  return (
-    <button tabIndex={0} type="button" className='py-2 -my-2 px-4 text-sm min-w-16 rounded-sm border border-blue'>
-      <span className="whitespace-nowrap flex items-center justify-center uppercase text-blue">
-        <span className="mr-2 -ml-1 whitespace-nowrap text-[24px]">
-          <SignInIcon />
-        </span>
-        sign in
-      </span>
-    </button>
-  )
-}
+const GoogleAuth = ({elementId}) => {
+  useEffect(() => {
+    /* global google */
+    google?.accounts.id.initialize({
+      client_id:
+        "73535695397-05ihej7t5p58j85rmsovfvodaa30dkeo.apps.googleusercontent.com",
+      callback: authenticate,
+    });
+    google?.accounts.id.renderButton(document.getElementById(elementId), {
+      theme: "outlined",
+      size: "medium",
+      text: "signin",
+    });
+  }, [elementId]);
 
-export default GoogleAuth
+  return <button id={elementId} tabIndex={0} type="button"></button>;
+};
+
+export default GoogleAuth;

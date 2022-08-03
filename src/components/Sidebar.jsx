@@ -3,10 +3,9 @@ import { ClockIcon, CollectionIcon, FireIcon, HomeIcon, LibraryIcon, ThumbUpIcon
 import { SidebarAuth, SidebarRow } from '.'
 
 
-const Sidebar = () => {
-  const user = false
+const Sidebar = ({ isSidebarOpen }) => {
   return (
-    <div className="hidden lg:flex lg:absolute top-0 left-0 right-0 flex-col col-span-2 items-start dark:bg-grey max-h-screen pt-16 pb-6 max-w-[240px] z-10 overflow-y-scroll scrollbar-hide">
+    <div className={`${isSidebarOpen ? "flex absolute" : "hidden"} lg:flex lg:absolute top-0 left-0 right-0 flex-col col-span-2 items-start dark:bg-grey max-h-screen pt-16 pb-6 w-[240px] z-40 overflow-y-scroll scrollbar-hide`}>
       <SidebarRow Icon={HomeIcon} title="Home" pathname="/" />
       <SidebarRow Icon={FireIcon} title="Explore" pathname="feed/trending" />
       <SidebarRow Icon={CollectionIcon} title="Lists" pathname="feed/subscriptions" />

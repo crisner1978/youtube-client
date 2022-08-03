@@ -1,12 +1,12 @@
-import React from 'react'
-import { GoogleAuth } from '.'
+import GoogleAuth from './GoogleAuth';
 
 const SidebarAuth = () => {
+  
   return (
     <div className='py-3 px-5'>
       <p>Sign in to like videos, comment, and subscribe.</p>
       <br />
-      <GoogleAuth />
+      <GoogleAuth elementId="sidebarSignIn" />
     </div>
   )
 }
