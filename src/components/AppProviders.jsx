@@ -6,23 +6,32 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import SnackbarProvider from "react-simple-snackbar";
 import { MobileNavbar, Navbar, Sidebar } from ".";
+import { gapi } from "gapi-script";
+
+export const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      retry: (failureCount, error) => {
+        if (error.status === 404) return false;
+        else if (failureCount < 2) return true;
+        else return true;
+      },
+    },
+  },
+});
+
+// gapi.load("client:auth2", () => {
+//   gapi.auth2.getAuthInstance({
+//     client_id:
+//       "73535695397-05ihej7t5p58j85rmsovfvodaa30dkeo.apps.googleusercontent.com",
+//     plugin_name: "youtube_clone",
+//   });
+// });
 
 export default function AppProviders({ children }) {
   const [theme] = useDarkTheme();
   const [isSidebarOpen, setSidebarOpen] = useState(false);
-
-  const queryClient = new QueryClient({
-    defaultOptions: {
-      queries: {
-        refetchOnWindowFocus: false,
-        retry: (failureCount, error) => {
-          if (error.status === 404) return false;
-          else if (failureCount < 2) return true;
-          else return true;
-        },
-      },
-    },
-  });
 
   const toggleSidebar = () => setSidebarOpen((prev) => !prev);
   const handleCloseSidebar = () => setSidebarOpen(false);
@@ -39,7 +48,7 @@ export default function AppProviders({ children }) {
               <MobileNavbar />
               <div className="lg:ml-60">
                 <Sidebar isSidebarOpen={isSidebarOpen} />
-                <div className="max-h-screen overflow-scroll scrollbar-hide pt-24">
+                <div className="max-h-screen overflow-scroll scrollbar-hide pt-16">
                   {children}
                 </div>
               </div>

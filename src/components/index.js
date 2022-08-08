@@ -12,5 +12,15 @@ import VideoCard from "./VideoCard";
 import UploadVideo from "./UploadVideo";
 import VideoPlayer from "./VideoPlayer";
 import UploadVideoModal from "./UploadVideoModal";
+import NoResults from "./NoResults";
+import Comments from "./Comments";
+import CommentList from "./CommentList";
+import DeleteCommentDropdown from "./DeleteCommentDropdown";
+import ChannelInfo from "./ChannelInfo";
+import SubscribeButton from "./SubscribeButton";
+import TrendingCard from "./TrendingCard";
+import Subscriptions from "./Subscriptions";
+import SignUpCard from "./SignUpCard";
+import ChannelSuggestions from "./ChannelSuggestions";
 
-export { AppProviders, Navbar, Sidebar, MobileNavbar, SidebarRow, Search, GoogleAuth, SidebarAuth, UserDropdown, ErrorMessage, VideoCard, UploadVideo, VideoPlayer, UploadVideoModal };
+export { AppProviders, Navbar, Sidebar, MobileNavbar, SidebarRow, Search, GoogleAuth, SidebarAuth, UserDropdown, ErrorMessage, VideoCard, UploadVideo, VideoPlayer, UploadVideoModal, Comments, NoResults, CommentList, DeleteCommentDropdown, ChannelInfo, SubscribeButton, TrendingCard, Subscriptions, SignUpCard, ChannelSuggestions };

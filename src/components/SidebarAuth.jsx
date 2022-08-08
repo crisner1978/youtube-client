@@ -6,7 +6,7 @@ const SidebarAuth = () => {
     <div className='py-3 px-5'>
       <p>Sign in to like videos, comment, and subscribe.</p>
       <br />
-      <GoogleAuth elementId="sidebarSignIn" />
+      <GoogleAuth elementId="sidebarSignIn" buttonSize="medium" />
     </div>
   )
 }

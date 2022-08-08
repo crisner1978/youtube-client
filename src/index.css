@@ -3,6 +3,16 @@
 @tailwind utilities;
 
 
+
+@layer components {
+    .skeleton {
+        @apply rounded-md bg-gradient-to-tr from-grey to-gray-700 animate-pulse transition-colors transform duration-200 shadow-lg
+    }
+    .hoverBright {
+        @apply hover:brightness-125 transition-all transform duration-150 ease-out
+    }
+}
+
 .animated {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;

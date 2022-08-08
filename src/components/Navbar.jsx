@@ -10,10 +10,10 @@ const Navbar = ({ toggleSidebar }) => {
   return (
     <div className="z-50 dark:text-white dark:bg-grey fixed px-6 flex items-center justify-between h-[64px] w-full">
       <div className="flex items-center">
-        <HamburgerIcon onClick={toggleSidebar} className="cursor-pointer" />
+        <HamburgerIcon onClick={toggleSidebar} className="cursor-pointer h-8 w-8" />
         <span className="ml-3 py-1">
           <NavLink to="/">
-            <LogoIcon style={{ width: 80, height: 24 }} />
+            <LogoIcon style={{ width: 95, height: 35 }} />
           </NavLink>
         </span>
       </div>
@@ -30,7 +30,7 @@ const Navbar = ({ toggleSidebar }) => {
           {user ? (
             <UserDropdown user={user} />
           ) : (
-            <GoogleAuth elementId="signIn" />
+            <GoogleAuth elementId="signIn" buttonSize="medium" />
           )}
         </li>
       </ul>

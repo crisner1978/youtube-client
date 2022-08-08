@@ -47,21 +47,6 @@ function UserDropdown({ user }) {
         </>
       )}
     </Popover>
-    // <Menu>
-    //   <MenuButton>
-
-    //   </MenuButton>
-    //   <MenuList as="div" style={{ backgroundColor: "#202020" }}>
-    //     <MenuItem onSelect={() => null}>
-    //       <div className="flex items-center space-x-3 hover:bg-darkGrey w-full">
-
-    //       </div>
-    //     </MenuItem>
-    //     <MenuItem onSelect={() => null}>
-
-    //     </MenuItem>
-    //   </MenuList>
-    // </Menu>
   );
 }
 

@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { authenticate } from "utils/api-client";
 
-const GoogleAuth = ({elementId}) => {
+const GoogleAuth = ({elementId, buttonSize}) => {
+  
   useEffect(() => {
     /* global google */
     google?.accounts.id.initialize({
@@ -11,10 +12,10 @@ const GoogleAuth = ({elementId}) => {
     });
     google?.accounts.id.renderButton(document.getElementById(elementId), {
       theme: "outlined",
-      size: "medium",
+      size: buttonSize,
       text: "signin",
     });
-  }, [elementId]);
+  }, [elementId, buttonSize]);
 
   return <button id={elementId} tabIndex={0} type="button"></button>;
 };

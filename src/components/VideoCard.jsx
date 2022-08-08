@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { formatCreatedAt } from "utils/date";
 
-const VideoCard = ({ video }) => {
+const VideoCard = ({ video, hideAvatar }) => {
   return (
     <div className="sm:h-48 rounded-md shadow-lg pb-4">
       <Link to={`/watch/${video.id}`}>
@@ -9,11 +9,11 @@ const VideoCard = ({ video }) => {
       </Link>
       <div className="flex mt-1">
         <div className="">
-          <img
+          {!hideAvatar && <img
             className="rounded-full relative top-2 h-12 w-12 mr-4"
             src={video.user.avatar}
             alt={`${video.user.username}'s channel avatar`}
-          />
+          />}
         </div>
         <div className="flex-1 mt-1">
           <Link to={`/watch/${video.id}`}>
