@@ -10,8 +10,8 @@ const ChannelInfo = ({ channel }) => {
   
   function handleToggleSubscribe() {
     handleAuthAction(toggleSubscribeUser, channel.id);
-    // toggleSubscribeUser(channelId)
   }
+  
   return (
     <div className="flex items-center justify-between my-8">
       <Link to={`/channel/${channel.id}`} className="flex items-center space-x-4">

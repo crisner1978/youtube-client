@@ -51,8 +51,6 @@ const UploadVideo = () => {
     }
   }
 
-  console.log(previewVideo)
-
   return (
     <div>
       <label htmlFor="video-upload">

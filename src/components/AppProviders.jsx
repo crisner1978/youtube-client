@@ -6,7 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import SnackbarProvider from "react-simple-snackbar";
 import { MobileNavbar, Navbar, Sidebar } from ".";
-import { gapi } from "gapi-script";
+// import { gapi } from "gapi-script";
 
 export const queryClient = new QueryClient({
   defaultOptions: {

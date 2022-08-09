@@ -13,7 +13,6 @@ const Trending = () => {
   if (isLoading) return <TrendingSkeleton />;
 
   if (isError) return <ErrorMessage error={error} />;
-  console.log("data", data);
 
   return (
     <div className="max-w-sm sm:max-w-3xl mx-auto p-5 pb-24">

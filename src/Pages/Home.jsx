@@ -14,7 +14,6 @@ const Home = () => {
   } = useQuery(["Home"], () =>
     client.get("/videos").then((res) => res.data.videos)
   );
-  console.log("videos", videos);
 
   if (isLoading) return <HomeSkeleton />;
   if (isError) return <ErrorMessage error={error} />;

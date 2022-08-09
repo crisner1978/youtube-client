@@ -13,14 +13,20 @@ const options = {
   },
 };
 
-const UploadVideoModal = ({ handleClose, previewVideo, thumbnail, videoUrl, defaultTitle }) => {
-  const [openSnackbar] = useSnackbar(options)
-  const navigate = useNavigate()
+const UploadVideoModal = ({
+  handleClose,
+  previewVideo,
+  thumbnail,
+  videoUrl,
+  defaultTitle,
+}) => {
+  const [openSnackbar] = useSnackbar(options);
+  const navigate = useNavigate();
   const modalRef = useRef(null);
   const [tab, setTab] = useState("PREVIEW");
   const [title, setTitle] = useState(defaultTitle);
   const [description, setDescription] = useState("");
-  const user = useAuth()
+  const user = useAuth();
 
   const handleClickOutside = (e) => {
     if (modalRef.current && !modalRef.current.contains(e.target)) {
@@ -30,23 +36,23 @@ const UploadVideoModal = ({ handleClose, previewVideo, thumbnail, videoUrl, defa
 
   async function handleTab() {
     if (tab === "PREVIEW") {
-      setTab("FORM")
+      setTab("FORM");
     } else {
       if (!title.trim() || !description.trim()) {
-        return openSnackbar("Please fill in all the fields")
+        return openSnackbar("Please fill in all the fields");
       }
 
       const video = {
         title,
         description,
         url: videoUrl,
-        thumbnail
-      }
+        thumbnail,
+      };
 
-      await addVideo(video)
-      handleClose()
-      openSnackbar("Video published")
-      navigate(`/channel/${user.id}`)
+      await addVideo(video);
+      handleClose();
+      openSnackbar("Video published");
+      navigate(`/channel/${user.id}`);
     }
   }
 
@@ -58,12 +64,20 @@ const UploadVideoModal = ({ handleClose, previewVideo, thumbnail, videoUrl, defa
         ref={modalRef}
         className="min-w-[350px] sm:min-w-[450px] mt-10 dark:bg-grey border-grey border shadow-lg shadow-darkGreyrey bg-white flex flex-col rounded-lg mb-20">
         <div className="flex justify-between items-center my-4 mx-4">
-          <div className="flex items-center space-x-4" >
-            <CloseIcon className="cursor-pointer fill-red h-7 w-7" onClick={handleClose} />
-            <h3>{videoUrl ? 'Video Uploaded!' : 'Uploading...'}</h3>
+          <div className="flex items-center space-x-4">
+            <CloseIcon
+              className="cursor-pointer fill-red h-7 w-7"
+              onClick={handleClose}
+            />
+            <h3>{videoUrl ? "Video Uploaded!" : "Uploading..."}</h3>
           </div>
-          <div className={videoUrl ? "block mr-1 bg-red px-4 py-1 rounded-lg" : "hidden"}>
-            <button className="uppercase" onClick={handleTab}>{tab === "PREVIEW" ? "Next" : "Upload"}</button>
+          <div
+            className={
+              videoUrl ? "block mr-1 bg-red px-4 py-1 rounded-lg" : "hidden"
+            }>
+            <button className="uppercase" onClick={handleTab}>
+              {tab === "PREVIEW" ? "Next" : "Upload"}
+            </button>
           </div>
         </div>
 

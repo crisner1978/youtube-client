@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import {
   Comments,
   NoResults,
@@ -102,7 +102,11 @@ const WatchVideo = () => {
                 alt={`${video.user.username} channel avatar`}
               />
               <div>
-                <h4>{video.user.username}</h4>
+                <h4>
+                <Link to={`/channel/${video.user.id}`}>
+                  {video.user.username}
+                </Link>
+                </h4>
                 <span className="text-sm text-sColor">
                   {video.subscribersCount} subscribers
                 </span>

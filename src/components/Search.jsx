@@ -3,15 +3,15 @@ import { useNavigate } from "react-router-dom";
 import { SearchIcon } from "./Icons";
 
 const Search = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const searchQuery = e.target.elements.search.value
+    const searchQuery = e.target.elements.search.value;
 
-    if (!searchQuery.trim()) return
+    if (!searchQuery.trim()) return;
 
-    navigate(`/results/${searchQuery}`)
+    navigate(`/results/${searchQuery}`);
   }
   return (
     <div>

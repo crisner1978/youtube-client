@@ -1,9 +1,8 @@
 import React from 'react'
+import { Channel } from '.'
 
 const YourVideos = () => {
-  return (
-    <div>YourVideos</div>
-  )
+  return <Channel />
 }
 
 export default YourVideos

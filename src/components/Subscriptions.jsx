@@ -7,7 +7,9 @@ const Subscriptions = ({ user }) => {
   return (
     <div className="w-[240px]">
       {user.channels.length ? (
-        <h4 className="uppercase mb-2 text-sColor pt-1 pl-6 tracking-wider font-semibold">Subscriptions</h4>
+        <h4 className="uppercase mb-2 text-sColor pt-1 pl-6 tracking-wider font-semibold">
+          Subscriptions
+        </h4>
       ) : null}
       {user.channels.length
         ? user.channels.map((channel) => (
@@ -25,7 +27,9 @@ const Subscriptions = ({ user }) => {
                   src={channel.avatar}
                   alt={channel.username}
                 />
-                <h3 className="group-hover:text-blue text-base font-semibold">{channel.username}</h3>
+                <h3 className="group-hover:text-blue text-base font-semibold">
+                  {channel.username}
+                </h3>
               </div>
             </NavLink>
           ))
