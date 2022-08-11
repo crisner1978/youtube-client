@@ -22,6 +22,10 @@ import UploadVideoModal from "./UploadVideoModal";
 import UserDropdown from "./UserDropdown";
 import VideoCard from "./VideoCard";
 import VideoPlayer from "./VideoPlayer";
+import EditProfile from "./EditProfile";
+import ChannelTabAbout from "./ChannelTabAbout";
+import ChannelTabVideo from "./ChannelTabVideo";
+import ChannelTabChannels from "./ChannelTabChannels";
 
 export {
   AppProviders,
@@ -48,5 +52,9 @@ export {
   Subscriptions,
   SignUpCard,
   ChannelSuggestions,
+  EditProfile,
+  ChannelTabAbout,
+  ChannelTabVideo,
+  ChannelTabChannels
 };
 

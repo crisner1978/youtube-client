@@ -7,6 +7,8 @@ import { ChannelIcon, SignoutIcon } from "./Icons";
 function UserDropdown({ user }) {
   const navigate = useNavigate()
 
+  console.log("user", user)
+
   return (
     <Popover className="relative flex">
       {({ open }) => (
