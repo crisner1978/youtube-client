@@ -26,6 +26,9 @@ import EditProfile from "./EditProfile";
 import ChannelTabAbout from "./ChannelTabAbout";
 import ChannelTabVideo from "./ChannelTabVideo";
 import ChannelTabChannels from "./ChannelTabChannels";
+import EditProfileModal from "./EditProfileModal";
+import DeleteVideoDropdown from "./DeleteVideoDropdown";
+import ErrorFallback from "./ErrorFallback";
 
 export {
   AppProviders,
@@ -55,6 +58,9 @@ export {
   EditProfile,
   ChannelTabAbout,
   ChannelTabVideo,
-  ChannelTabChannels
+  ChannelTabChannels,
+  EditProfileModal,
+  DeleteVideoDropdown,
+  ErrorFallback
 };
 

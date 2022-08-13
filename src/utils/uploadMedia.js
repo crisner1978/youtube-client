@@ -1,5 +1,6 @@
 import axios from "axios";
 
+// Cloudinary Upload Media Function
 export async function uploadMedia(uploadObject) {
   const { type, file, preset } = uploadObject;
 

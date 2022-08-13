@@ -34,7 +34,7 @@ function UserDropdown({ user }) {
             leaveFrom="opacity-100 translate-y-0"
             leaveTo="opacity-0 translate-y-1">
             <Popover.Panel className="absolute -right-32 z-10 mt-[45px] w-[250px] -translate-x-1/2 transform lg:max-w-3xl bg-grey border-darkGrey border-l border-b border-r">
-              <div className=" overflow-hidden p-1 shadow-lg ring-1 ring-black ring-opacity-5">
+              <div className="overflow-hidden p-1 shadow-lg ring-1 ring-black ring-opacity-5">
                 <div onClick={() => navigate(`/channel/${user.id}`)} className="group flex px-10 py-2 items-center space-x-3 hover:bg-darkGrey cursor-pointer">
                   <ChannelIcon className="w-9 h-9 group-hover:fill-blue" />
                   <span className="text-white group-hover:text-blue">Your channel</span>

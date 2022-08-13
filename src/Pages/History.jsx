@@ -37,7 +37,7 @@ const History = () => {
   if (isError) return <ErrorMessage error={error} />;
 
   return (
-    <div className="max-w-3xl mx-auto p-5 pb-2">
+    <div className="max-w-sm sm:max-w-3xl mx-auto p-5 pb-2">
       <h2 className="text-xl sm:text-2xl font-semibold mb-2">History</h2>
       {isSuccess && !videos.length && (
         <p className="text-sColor">

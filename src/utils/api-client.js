@@ -6,8 +6,8 @@ export const client = axios.create({
 });
 
 export function authenticate(response) {
-    const { tokenId, credential, id_token } = response
-  console.log("hey look at", tokenId);
+  const { tokenId, credential, id_token } = response;
+  // console.log("hey look at", tokenId);
   client({
     method: "POST",
     url: "/auth/google-login",
@@ -58,6 +58,21 @@ export async function toggleSubscribeUser(channelId) {
 }
 
 export async function addComment({ video, comment }) {
-    await client.post(`/videos/${video.id}/comments`, { text: comment })
-    await queryClient.invalidateQueries(["WatchVideo", video.id]);
+  await client.post(`/videos/${video.id}/comments`, { text: comment });
+  await queryClient.invalidateQueries(["WatchVideo", video.id]);
+}
+
+export async function updateUser(user) {
+  await client.put('/users', user)
+  await queryClient.invalidateQueries(["Channel"]);
+}
+
+export async function deleteComment(comment) {
+  await client.delete(`/videos/${comment.videoId}/comments/${comment.id}`)
+  await queryClient.invalidateQueries(["WatchVideo"])
+}
+
+export async function deleteVideo(videoId) {
+  await client.delete(`/videos/${videoId}`)
+  await queryClient.invalidateQueries(["Channel"]);
 }

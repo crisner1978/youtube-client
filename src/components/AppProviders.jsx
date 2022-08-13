@@ -5,7 +5,8 @@ import React, { useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import SnackbarProvider from "react-simple-snackbar";
-import { MobileNavbar, Navbar, Sidebar } from ".";
+import { ErrorFallback, MobileNavbar, Navbar, Sidebar } from ".";
+import { ErrorBoundary } from "react-error-boundary";
 // import { gapi } from "gapi-script";
 
 export const queryClient = new QueryClient({
@@ -39,24 +40,26 @@ export default function AppProviders({ children }) {
   useLocationChange(handleCloseSidebar);
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <AuthProvider>
-        <SnackbarProvider>
-          <ThemeProvider theme={theme}>
-            <div className="dark:bg-background bg-white dark:text-white min-h-screen">
-              <Navbar toggleSidebar={toggleSidebar} />
-              <MobileNavbar />
-              <div className="lg:ml-60">
-                <Sidebar isSidebarOpen={isSidebarOpen} />
-                <div className="max-h-screen overflow-scroll scrollbar-hide pt-16">
-                  {children}
+    <ErrorBoundary FallbackComponent={ErrorFallback}>
+      <QueryClientProvider client={queryClient}>
+        <AuthProvider>
+          <SnackbarProvider>
+            <ThemeProvider theme={theme}>
+              <div className="dark:bg-background bg-white dark:text-white min-h-screen">
+                <Navbar toggleSidebar={toggleSidebar} />
+                <MobileNavbar />
+                <div className="lg:ml-60">
+                  <Sidebar isSidebarOpen={isSidebarOpen} />
+                  <div className="h-screen overflow-scroll scrollbar-hide pt-16">
+                    {children}
+                  </div>
                 </div>
               </div>
-            </div>
-            <ReactQueryDevtools />
-          </ThemeProvider>
-        </SnackbarProvider>
-      </AuthProvider>
-    </QueryClientProvider>
+              <ReactQueryDevtools />
+            </ThemeProvider>
+          </SnackbarProvider>
+        </AuthProvider>
+      </QueryClientProvider>
+    </ErrorBoundary>
   );
 }

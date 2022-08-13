@@ -18,7 +18,7 @@ const TrendingCard = ({ video }) => {
           <h3>{video.title}</h3>
         </Link>
         <p className="text-sColor">
-          <span>{video.user.username}</span> <span>•</span>{" "}
+          <Link to={`/channel/${video.user.id}`}>{video.user.username}</Link> <span>•</span>{" "}
           <span>{video.views} views </span>
           <span>•</span> <span>{formatCreatedAt(video.createdAt)}</span>
         </p>

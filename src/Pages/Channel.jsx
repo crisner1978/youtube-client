@@ -98,18 +98,21 @@ const Channel = () => {
         <div className="mt-6 w-5/6 mx-auto">
           <ul className="flex items-center uppercase space-x-8 tracking-wider font-semibold">
             <li
+              onClick={() => setTab("VIDEOS")}
               className={`${
                 tab === "VIDEOS" && "border-white border-b-2 text-white"
               } text-sColor cursor-pointer pb-1`}>
               Videos
             </li>
             <li
+              onClick={() => setTab("CHANNELS")}
               className={`${
                 tab === "CHANNELS" && "border-white border-b-2 text-white"
               } text-sColor cursor-pointer pb-1`}>
               Channels
             </li>
             <li
+              onClick={() => setTab("ABOUT")}
               className={`${
                 tab === "ABOUT" && "border-white border-b-2 text-white"
               } text-sColor cursor-pointer pb-1`}>
@@ -119,9 +122,11 @@ const Channel = () => {
         </div>
       </div>
 
-      <div className="mt-6 w-full sm:w-10/12 mx-auto">
+      <div className="mt-6 w-full sm:w-10/12 mx-auto px-5 sm:px-2">
         {tab === "VIDEOS" && <ChannelTabVideo videos={channel.videos} />}
-        {tab === "CHANNELS" && <ChannelTabChannels channels={channel.channels} />}
+        {tab === "CHANNELS" && (
+          <ChannelTabChannels channels={channel.channels} />
+        )}
         {tab === "ABOUT" && <ChannelTabAbout about={channel.about} />}
       </div>
     </div>

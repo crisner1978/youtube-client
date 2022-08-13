@@ -8,8 +8,8 @@ const ChannelTabChannels = ({ channels }) => {
       {channels.map((channel) => (
         <Link key={channel.id} to={`/channel/${channel.id}`}>
           <div className="flex flex-col justify-center">
-            <img className="w-28 h-28 rounded-full mb-3 object-cover" src={channel.avatar} alt={`${channel.avatar} channel avatar`} />
-            <h3>{channel.username}</h3>
+            <img className="w-28 h-28 rounded-full mb-3 object-cover" src={channel.avatar} alt={`${channel.username} channel avatar`} />
+            <h3 className="text-lg sm:text-xl font-semibold">{channel.username}</h3>
             <p className="text-sColor">{channel.subscribersCount} subscribers</p>
           </div>
         </Link>

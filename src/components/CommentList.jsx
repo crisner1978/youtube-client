@@ -9,7 +9,7 @@ const CommentList = ({ comments }) => {
   ));
 };
 
-export default CommentList;
+export default React.memo(CommentList);
 
 function Comment({ comment }) {
   return (

@@ -73,7 +73,7 @@ const UploadVideoModal = ({
           </div>
           <div
             className={
-              videoUrl ? "block mr-1 bg-red px-4 py-1 rounded-lg" : "hidden"
+              videoUrl ? "block mr-1 bg-red px-4 py-1 rounded-lg hoverBright uppercase" : "hidden"
             }>
             <button className="uppercase" onClick={handleTab}>
               {tab === "PREVIEW" ? "Next" : "Upload"}
@@ -110,10 +110,6 @@ const UploadVideoModal = ({
             </div>
           </div>
         )}
-
-        {/* <div className="flex justify-center items-center p-4">
-          {/* {footer} */}
-        {/* </div> */}
       </div>
     </div>
   );

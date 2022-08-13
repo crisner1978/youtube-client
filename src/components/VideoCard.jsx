@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { formatCreatedAt } from "utils/date";
+import { DeleteVideoDropdown } from ".";
 
 const VideoCard = ({ video, hideAvatar, noUsername }) => {
   return (
-    <div className="sm:h-48 rounded-md shadow-lg pb-4">
+    <div className="rounded-md shadow-lg pb-4">
       <Link to={`/watch/${video.id}`}>
-        <img className="rounded-md" src={video.thumbnail} alt={video.title} />
+        <img className="rounded-md sm:h-48" src={video.thumbnail} alt={video.title} />
       </Link>
       <div className="flex mt-1">
         <div className="">
@@ -32,7 +33,7 @@ const VideoCard = ({ video, hideAvatar, noUsername }) => {
             <span>{formatCreatedAt(video.createdAt)}</span>
           </p>
         </div>
-        {/* <DeleteVideoDropdown /> */}
+        <DeleteVideoDropdown video={video} />
       </div>
     </div>
   );

@@ -4,8 +4,8 @@ const ChannelSkeleton = () => {
   return (
     <div className="min-h-screen">
       <div className="h-44 w-full skeleton" />
-      <div className="flex items-center w-4/5 my-4 mx-auto">
-        <div className="mr-4 w-32 h-32 mt-4 rounded-full skeleton" />
+      <div className="flex items-center w-4/5 my-4 mx-auto pt-2 sm:pt-0">
+        <div className="mr-4 w-16 h-16 sm:w-32 sm:h-32 sm:mt-4 rounded-full skeleton" />
         <div className="w-4/5 space-y-4">
           <div className="h-5 w-[250px] skeleton" />
           <div className="h-5 w-[200px] skeleton" />
